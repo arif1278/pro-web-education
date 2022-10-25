@@ -1,14 +1,26 @@
 import React from 'react';
+import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../component/context/UserContext';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(error => console.error(error));
     }
     return (
         <div className='w-50 mx-auto border'>
