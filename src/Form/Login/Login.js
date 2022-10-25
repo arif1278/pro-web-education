@@ -27,7 +27,7 @@ const Login = () => {
             .catch(error => console.error(error));
     }
     return (
-        <div className='w-50 mx-auto border'>
+        <div className='w-50 mx-auto border mb-12'>
             <h3 className='text-primary'>Login</h3>
             <Form onSubmit={handleLogin}>
 

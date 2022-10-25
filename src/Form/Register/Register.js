@@ -1,12 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../component/context/UserContext';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -22,7 +23,7 @@ const Register = () => {
                 console.log(user);
                 form.reset();
             })
-            .cathch(error => {
+            .catch(error => {
                 console.error('error', error);
             })
 
@@ -34,8 +35,26 @@ const Register = () => {
             .catch(error => console.error(error));
     }
 
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
+    }
+
+    const handleGitSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
+    }
+
     return (
-        <div className='w-50 mx-auto border'>
+        <div className='w-50 mx-auto border my-12'>
             <h3 className='text-primary'>Register</h3>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicName">
@@ -53,6 +72,10 @@ const Register = () => {
                 </Form.Group>
                 <input type="submit" value="Sign Up" />
             </Form>
+            <br />
+            <Button className='me-2 my-2' onClick={handleGoogleSignIn} variant="success">Google</Button>
+            <Button className='me-2 my-2' onClick={handleGitSignIn} variant="success">GitHub</Button>
+
             <p>Already Have an Account?<Link to='/login'>Login</Link></p>
         </div>
 
