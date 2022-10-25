@@ -8,7 +8,7 @@ import { AuthContext } from '../../component/context/UserContext';
 
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     return (
 
         <div>
@@ -28,8 +28,15 @@ const Header = () => {
                 <Link className='text-white me-5 my-2 text-decoration-none' to='/'>Home</Link>
                 <Link className='text-white me-5  my-2 text-decoration-none' to='/courses'>Courses</Link>
                 <Link className='text-white me-5 my-2 text-decoration-none' to='/blog'>Blog</Link>
-                <Link className='text-white me-5 my-2 text-decoration-none' to='/login'>Login</Link>
-                <Link className='text-white me-5 my-2 text-decoration-none' to='/register'>Register</Link>
+                {
+                    user?.uid ?
+                        <Link onClick={logOut} className='text-white me-5 my-2 text-decoration-none' to='/login'>LogOut</Link>
+                        :
+                        <>
+                            <Link className='text-white me-5 my-2 text-decoration-none' to='/login'>Login</Link>
+                            <Link className='text-white me-5 my-2 text-decoration-none' to='/register'>Register</Link>
+                        </>
+                }
                 <span>{user?.email}</span>
 
 

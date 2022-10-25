@@ -5,6 +5,7 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
+import PrivateRoute from "../PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -18,7 +19,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <PrivateRoute><Courses></Courses></PrivateRoute>
             },
             {
                 path: '/blog',
