@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import CourseDetails from "../../component/CourseDetails/CourseDetails";
+import NotFound from "../../component/NotFound";
 import Login from "../../Form/Login/Login";
 import Register from "../../Form/Register/Register";
 import Main from "../../Layout/Main";
@@ -61,6 +62,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/courseDetails/:id',
                 element: <CourseDetails></CourseDetails>
+            },
+            {
+                path: "*",
+                element: <NotFound></NotFound>
             }
         ]
     }
