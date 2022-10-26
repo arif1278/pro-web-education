@@ -1,5 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import LeftSideNav from '../Shared/LeftSideNav';
+import RightSide from '../Shared/RightSide';
+
 
 const Courses = () => {
     return (
@@ -7,10 +10,10 @@ const Courses = () => {
             <Container>
                 <Row>
                     <Col lg-3>
-                        <h3>Left Side</h3>
+                        <LeftSideNav></LeftSideNav>
                     </Col>
                     <Col lg-9>
-                        <h3>Right Side</h3>
+                        <RightSide></RightSide>
                     </Col>
                 </Row>
             </Container>
