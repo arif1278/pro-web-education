@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import Category from "../../component/Category/Category";
+
 import CourseDetails from "../../component/CourseDetails/CourseDetails";
 import Login from "../../Form/Login/Login";
 import Register from "../../Form/Register/Register";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
+import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home";
+import LeftSideNav from "../../Pages/Shared/LeftSideNav";
 import RightSide from "../../Pages/Shared/RightSide";
 import PrivateRoute from "../PrivateRoute";
 
@@ -35,6 +37,10 @@ export const routes = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
+                path: "/faq",
+                element: <Faq></Faq>
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
@@ -44,8 +50,13 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                element: <Category></Category>,
+                element: <LeftSideNav></LeftSideNav>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params}`)
+            },
+            {
+                path: '/course',
+                element: <RightSide></RightSide>,
+                loader: () => fetch(`http://localhost:5000/course`)
             },
             {
                 path: '/courseDetails/:id',

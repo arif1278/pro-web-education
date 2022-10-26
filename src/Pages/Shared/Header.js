@@ -28,6 +28,7 @@ const Header = () => {
                 <Link className='text-white me-5 my-2 text-decoration-none' to='/'>Home</Link>
                 <Link className='text-white me-5  my-2 text-decoration-none' to='/courses'>Courses</Link>
                 <Link className='text-white me-5 my-2 text-decoration-none' to='/blog'>Blog</Link>
+                <Link className='text-white me-5 my-2 text-decoration-none' to='/faq'>FAQ</Link>
                 {
                     user?.uid ?
                         <Link onClick={logOut} className='text-white me-5 my-2 text-decoration-none' to='/login'>LogOut</Link>

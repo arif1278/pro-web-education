@@ -7,7 +7,7 @@ import { AuthContext } from '../../component/context/UserContext';
 
 const Register = () => {
 
-    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, signInWithGithub, handleUpdateProfile } = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -15,7 +15,8 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        const PhotoURL = form.photoURL.value;
+        console.log(name, email, password, PhotoURL);
 
         createUser(email, password)
             .then(result => {
@@ -27,12 +28,7 @@ const Register = () => {
                 console.error('error', error);
             })
 
-        createUser(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => console.error(error));
+
     }
 
     const handleGoogleSignIn = () => {
@@ -64,6 +60,10 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="text" name='photoURL' placeholder="Enter photoURL" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
