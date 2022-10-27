@@ -60,8 +60,9 @@ export const routes = createBrowserRouter([
                 loader: () => fetch(`https://growhand-server.vercel.app/course`)
             },
             {
-                path: '/courseDetails/:id',
-                element: <CourseDetails></CourseDetails>
+                path: '/courses/:id',
+                element: <CourseDetails></CourseDetails>,
+                loader: (params) => fetch(`https://growhand-server.vercel.app/courses/${params.id}`)
             },
             {
                 path: "*",
