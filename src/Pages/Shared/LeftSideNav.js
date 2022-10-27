@@ -9,7 +9,7 @@ const LeftSideNav = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://growhand-server.vercel.app/course-categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     }, [])

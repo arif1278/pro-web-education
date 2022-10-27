@@ -10,7 +10,7 @@ const RightSide = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course')
+        fetch('https://growhand-server.vercel.app/course')
             .then(res => res.json())
             .then(data => setCourse(data));
     }, [])

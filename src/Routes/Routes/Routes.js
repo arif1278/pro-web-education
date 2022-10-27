@@ -52,12 +52,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <LeftSideNav></LeftSideNav>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params}`)
+                loader: ({ params }) => fetch(`https://growhand-server.vercel.app/category/${params.id}`)
             },
             {
                 path: '/course',
                 element: <RightSide></RightSide>,
-                loader: () => fetch(`http://localhost:5000/course`)
+                loader: () => fetch(`https://growhand-server.vercel.app/course`)
             },
             {
                 path: '/courseDetails/:id',
