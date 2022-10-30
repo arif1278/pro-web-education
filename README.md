@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+Wesite name: "Growhand bd"
+Live website link: [https://auth-router-server.web.app/]
+1.This is an education site.
+2.Anyone can buy online courses through this site.
+3.If you want, you can buy the course from the site and then download the PDF file and read it offline.
+4.This is a dynamic site.
+5.This site has been created through own API.
+6.deployed by firebase.
+7.this site create by react,daisy ui,tailwind css ,firebase,vercel etc.
