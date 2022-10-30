@@ -1,24 +1,19 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import LeftSideNav from '../Shared/LeftSideNav';
-import RightSide from '../Shared/RightSide';
-
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import SingleCourse from "../categories/SingleCourse";
 
 const Courses = () => {
-    return (
-        <div>
-            <Container>
-                <Row>
-                    <Col lg-3>
-                        <LeftSideNav></LeftSideNav>
-                    </Col>
-                    <Col lg-9>
-                        <RightSide></RightSide>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    );
+  const courses = useLoaderData();
+  return (
+    <>
+      <h3 className="text-3xl my-4">Courses</h3>
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-3">
+        {courses.map((course) => (
+          <SingleCourse key={course?._id} course={course} />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Courses;
