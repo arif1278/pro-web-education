@@ -10,4 +10,4 @@ Description :
 * This site has been created through own API.
 * deployed by firebase.
 * this site create by react,daisy ui,tailwind css ,firebase,vercel etc.
--bullet
+
